@@ -1,29 +1,30 @@
-<html>
+<html ng-app="githubApp">
 <head>
-<title>Github charts API</title>
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
+	<title>Github charts API</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Custom CSS -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<!-- Angular JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js"></script>
+	<!-- App JS -->
+	<script src="js/app.js"></script>
 </head>
 <body>
 	<div class="container">
 		<div class="panel panel-success">
 			<div class="panel-heading">Create Github repository</div>
 			<div class="panel-body">
-				<form>
+				<form ng-controller="githubCtrl">
 					<div class="form-group">
 						<label>Repository name:</label>
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="repository.name"/>
 					</div>
 					<div class="form-group">
 						<label>Credentials:</label>
-						<input type="text" class="form-control" />
+						<input type="text" class="form-control" ng-model="repository.credentials"/>
 					</div>
 					<input type="submit" class="btn btn-block btn-success" value="Create" />
 				</form>
