@@ -30,5 +30,13 @@
 				</form>
 			</div>
 		</div>
+		<div class="panel panel-primary">
+			<div class="panel-heading">Liste of repository</div>
+			<div class="panel-body" ng-controller="reposCtrl">
+				<ul ng-repeat="repo in repos">
+					<li><div class="alert alert-success" role="alert">{{repo.name}}</div></li>
+				</ul>
+			</div>
+		</div>
 </body>
 </html>
