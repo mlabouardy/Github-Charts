@@ -6,9 +6,8 @@ githubApp.controller('githubCtrl',function($scope){
 });
 
 
-var config = {headers:  {'mlabouardy:sinworm66125'}};
-
 githubApp.controller('commitsCtrl',function($scope, $http){
+	var config = {headers:  {'mlabouardy:sinworm66125'}};
 	$http.get("https://api.github.com/repos/mlabouardy/AtelierCP/commits", config).success(function(data){
 		$scope.commits=data;
 	});
