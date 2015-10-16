@@ -20,7 +20,7 @@ githubApp.controller('commitsCtrl',function($scope, $http){
 	  });
 	  var user = github.getUser();
 	  
-	  user.repos(function(err, repos) {
+	  user.repos(function(err, repos, $scope) {
 		  $scope.commits=repos;
 		  console.log("ok"+repos);
 	  });
