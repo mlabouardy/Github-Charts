@@ -18,3 +18,13 @@ githubApp.controller('reposCtrl',function($scope, $http){
 		$scope.repos=data;
 	});
 });
+
+
+var github = new Github({
+    username: "mlabouardy",
+    password:    "sinworm66125",
+    auth:     "basic"
+  });
+  var user = github.getUser();
+  
+  console.log('ok '+user);
