@@ -5,6 +5,11 @@ githubApp.controller('githubCtrl',function($scope){
 	$scope.credentials="mlabouardy";
 });
 
+githubApp.controller('commitsCtrl',function($scope, $http){
+	$http.get("https://api.github.com/repos/mlabouardy/AtelierCP/commits").success(function(data){
+		$scope.commits=data;
+	});
+});
 
 githubApp.controller('reposCtrl',function($scope, $http){
 	$http.get("https://api.github.com/users/mlabouardy/repos").success(function(data){
