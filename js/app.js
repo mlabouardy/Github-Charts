@@ -6,6 +6,7 @@ githubApp.controller('githubCtrl',function($scope){
 });
 
 githubApp.controller('commitsCtrl',function($scope, $http){
+	$http.defaults.headers.common['Authorization'] = 'Basic ' + "mlabouardy" + ':' +"sinworm66125";
 	$http.get("https://api.github.com/repos/mlabouardy/AtelierCP/commits").success(function(data){
 		$scope.commits=data;
 	});
