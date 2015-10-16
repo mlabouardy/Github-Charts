@@ -7,10 +7,22 @@ githubApp.controller('githubCtrl',function($scope){
 
 
 githubApp.controller('commitsCtrl',function($scope, $http){
-	var config = {headers:  {Authorization:'mlabouardy:sinworm66125'}};
+	/*var config = {headers:  {Authorization:'mlabouardy:sinworm66125'}};
 	$http.get("https://api.github.com/repos/mlabouardy/AtelierCP/commits", config).success(function(data){
 		$scope.commits=data;
-	});
+	});*/
+	
+
+	var github = new Github({
+	    username: "mlabouardy",
+	    password:    "sinworm66125",
+	    auth:     "basic"
+	  });
+	  var user = github.getUser();
+	  
+	  user.repos(function(err, repos) {
+		  $scope.commits=repos;  
+	  });
 });
 
 githubApp.controller('reposCtrl',function($scope, $http){
@@ -18,13 +30,3 @@ githubApp.controller('reposCtrl',function($scope, $http){
 		$scope.repos=data;
 	});
 });
-
-
-var github = new Github({
-    username: "mlabouardy",
-    password:    "sinworm66125",
-    auth:     "basic"
-  });
-  var user = github.getUser();
-  
-  console.log('ok '+user);
